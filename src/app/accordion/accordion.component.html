@@ -1,9 +1,3 @@
 <ul class="accordion-container">
-  <li *ngFor="let item of items; let i = index" class="accordion-item"
-      [class.open]="activeIndex === i"
-      (click)="openItem(i)"
-  >
-    <div class="item-header">{{item.header}}</div>
-    <div class="item-content">{{item.content}}</div>
-  </li>
+  <ng-content></ng-content>
 </ul>

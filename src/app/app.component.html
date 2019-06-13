@@ -1,3 +1,32 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
-<app-accordion [items]="accordionItems"></app-accordion>
+<app-accordion>
+  <app-accordion-item2 *ngFor="let item of accordionItems" [content]="item.content">
+    <div *appAccordionHeader="let item">
+      <div>
+        my item header is: {{item?.header}}
+      </div>
+    </div>
+    <div *appAccordionContent="let item">
+      <div>
+        my item content is: {{item?.content}}
+      </div>
+    </div>
+  </app-accordion-item2>
+</app-accordion>
+
+
+<app-accordion>
+  <app-accordion-item *ngFor="let item of accordionItems">
+    <div *appAccordionHeader="let item">
+      <div>
+        my item header is: {{item?.header}}
+      </div>
+    </div>
+    <div *appAccordionContent="let item">
+      <div>
+        my item content is: {{item?.content}}
+      </div>
+    </div>
+  </app-accordion-item>
+</app-accordion>
