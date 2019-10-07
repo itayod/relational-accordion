@@ -7,6 +7,7 @@ import { AccordionComponent } from './accordion/accordion.component';
 import { AccordionHeaderDirective } from './accordion/accordion-header.directive';
 import { AccordionContentDirective } from './accordion/accordion-content.directive';
 import { AccordionItemComponent } from './accordion/accordion-item/accordion-item.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { AccordionItemComponent } from './accordion/accordion-item/accordion-ite
   ],
   imports: [
     AccordionModule,
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

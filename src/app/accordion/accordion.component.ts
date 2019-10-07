@@ -1,19 +1,19 @@
-import {Component, OnInit, Input, ContentChild, TemplateRef, AfterContentInit, ContentChildren} from '@angular/core';
-import {AccordionContentDirective} from './accordion-content.directive';
-import {AccordionHeaderDirective} from './accordion-header.directive';
-import {AccordionItemComponent} from './accordion-item/accordion-item.component';
+import {Component, AfterContentInit, ContentChildren} from '@angular/core';
 import {AccordionItem, AccordionWrapper} from './accordion.model';
 import {ACCORDION_ITEM} from './accordion.tokens';
 
 @Component({
   selector: 'app-accordion',
-  templateUrl: './accordion.component.html',
+  template: `<ul class="accordion-container">
+    <ng-content></ng-content>
+  </ul>
+  `,
   styleUrls: ['./accordion.component.scss']
 })
-export class AccordionComponent implements  AfterContentInit, AccordionWrapper {
+export class AccordionComponent implements AfterContentInit, AccordionWrapper {
 
   private activeIndex: number;
-  @ContentChildren(<any> ACCORDION_ITEM) items: AccordionItem[];
+  @ContentChildren(ACCORDION_ITEM as any) items: AccordionItem[];
 
   public ngAfterContentInit(): void {
     this.items.forEach((item: AccordionItem, index) => {
